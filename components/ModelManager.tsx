@@ -17,7 +17,7 @@ export default function ModelManager({ settings, onUpdate }: { settings: Setting
       const list = await fetchFreeModels(settings.openrouterKey)
       setModels(list)
       setLastFetch(Date.now())
-    } catch (e: any) { setError(e.message) }
+    } catch (e: unknown) { setError(e instanceof Error ? e.message : String(e)) }
     finally { setLoading(false) }
   }
 
