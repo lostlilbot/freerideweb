@@ -26,7 +26,8 @@ export async function getTopArtifacts(
   return scored
     .sort((a, b) => b._score - a._score || (b.trade_value ?? 0) - (a.trade_value ?? 0))
     .slice(0, limit)
-    .map(({ _score: _, ...a }) => a as Artifact)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .map(({ _score: _unused, ...a }) => a as Artifact)
 }
 
 export function buildRAGPrompt(artifacts: Artifact[], userInput: string): string {
