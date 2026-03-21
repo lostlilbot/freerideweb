@@ -7,7 +7,7 @@ export default function SettingsPanel({ settings, onSave }: { settings: Settings
   const [saved, setSaved] = useState(false)
   const [showKey, setShowKey] = useState(false)
 
-  const set = (k: keyof Settings, v: any) => setForm(prev => ({ ...prev, [k]: v }))
+  const set = (k: keyof Settings, v: Settings[keyof Settings]) => setForm(prev => ({ ...prev, [k]: v }))
 
   const save = () => {
     saveSettings(form)
