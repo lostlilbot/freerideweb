@@ -36,11 +36,11 @@ export default function AgentHub({ settings }: { settings: Settings }) {
     setPeers(data ?? [])
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     loadDirectory()
     loadPeers()
   }, [])
-
   const connect = async (entry: DirectoryEntry) => {
     setConnecting(entry.agent_id)
     try {
