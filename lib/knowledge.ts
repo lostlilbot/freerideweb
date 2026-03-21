@@ -1,4 +1,4 @@
-import { getSupabase, Artifact, Correction } from './getSupabase()'
+import { getSupabase, Artifact, Correction } from './supabase'
 
 export async function getTopArtifacts(
   specialty: string,
