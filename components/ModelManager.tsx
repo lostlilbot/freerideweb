@@ -21,7 +21,8 @@ export default function ModelManager({ settings, onUpdate }: { settings: Setting
     finally { setLoading(false) }
   }
 
-  useEffect(() => { if (settings.openrouterKey) fetch_() }, [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (settings.openrouterKey) fetch_() }, [settings.openrouterKey])
 
   const moveUp = (i: number) => {
     if (i === 0) return
