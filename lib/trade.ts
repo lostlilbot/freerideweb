@@ -1,4 +1,4 @@
-import { getSupabase, Artifact, TradeEvent } from './getSupabase()'
+import { getSupabase, Artifact, TradeEvent } from './supabase'
 import { compareArtifacts } from './openrouter'
 
 export async function runTradeCycle(
