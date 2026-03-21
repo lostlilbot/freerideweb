@@ -140,8 +140,8 @@ export default function AgentTerminal({ settings }: { settings: Settings }) {
 
       setShowCorrect(true)
 
-    } catch (e: any) {
-      log('error', `> ERROR: ${e.message}`)
+    } catch (e: unknown) {
+      log('error', `> ERROR: ${e instanceof Error ? e.message : String(e)}`)
     } finally {
       setRunning(false)
     }
