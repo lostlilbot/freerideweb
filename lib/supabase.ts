@@ -6,9 +6,7 @@ export function getSupabase(): SupabaseClient {
   if (_client) return _client
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ''
-  if (!url || !key) {
-    throw new Error('Supabase environment variables are not configured. Please add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to Vercel.')
-  }
+  if (!url || !key) throw new Error('Supabase env vars missing')
   _client = createClient(url, key)
   return _client
 }
